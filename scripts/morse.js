@@ -42,7 +42,7 @@ class Morse {
     Sound = {
         Play: async function (message) {
             var array = message.split('');
-            var beep = new Audio('/sounds/beep.flac');
+            var beep = new Audio('/Morse/sounds/beep.flac');
             for (var i = 0; i < array.length; i++)
             {
                 if (array[i])
