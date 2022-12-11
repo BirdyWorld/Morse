@@ -46,7 +46,14 @@ class Morse {
             for (var i = 0; i < array.length; i++)
             {
                 if (array[i] == '1')
+                {
+                    console.log('play');
                     beep.play();
+                }
+                else
+                {
+                    console.log('dont');
+                }
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
         }
