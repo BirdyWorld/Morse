@@ -1,5 +1,10 @@
-class Morse {
-    Table = {
+interface Morse {
+    Table: Object;
+    Encode: Object;
+    Decode: Object;
+}
+const orse: Morse = {
+    Table: {
         'A': '10111',
         'B': '111010101',
         'C': '11101011101',
@@ -38,20 +43,8 @@ class Morse {
         '9': '11101110111011100',
         '': '000',
         ' ': '0000000'
-    };
-    Sound = {
-        Play: async function (message) {
-            var array = message.split('');
-            var beep = new Audio('/sounds/beep.flac');
-            for (var i = 0; i < array.length; i++)
-            {
-                if (array[i])
-                    beep.play();
-                await new Promise(resolve => setTimeout(resolve, 1000));
-            }
-        }
-    }
-    Encode = {
+    },
+    Encode: {
         Letter: (letter) => {
             return this.Table[letter.toUpperCase()] || null;
         },
@@ -61,8 +54,8 @@ class Morse {
         Message: (message) => {
             return message.trim().split(' ').map(this.Encode.Word).join('0000000');
         }
-    }
-    Decode = {
+    },
+    Decode: {
         Letter: (letter) => {
             return Object.entries(this.Table).reduce((acc, curr) => { acc[curr[1]] = curr[0]; return acc; }, {})[letter] || null;
         },
