@@ -43,6 +43,7 @@ class Morse {
         Play: async function (message) {
             var array = message.split('');
             var beep = new Audio('/Morse/sounds/beep.flac');
+            beep.onended = function () {console.log('ended');}
             for (var i = 0; i < array.length; i++)
             {
                 if (array[i] == '1')
