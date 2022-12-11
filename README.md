@@ -1,2 +1,2 @@
 # Morse
-This is an app to translate, learn and communicate via morse code
+This the branch who's deployed on github pages
