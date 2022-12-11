@@ -45,7 +45,7 @@ class Morse {
             var beep = new Audio('/Morse/sounds/beep.flac');
             for (var i = 0; i < array.length; i++)
             {
-                if (array[i])
+                if (array[i] == '1')
                     beep.play();
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
