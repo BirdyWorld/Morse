@@ -42,18 +42,17 @@ class Morse {
     Sound = {
         Play: async function (message) {
             var array = message.split('');
-            var beep = new Audio('/Morse/sounds/beep.flac');
-            beep.onended = function () {console.log('ended');}
-            for (var i = 0; i < array.length; i++)
-            {
-                if (array[i] == '1')
-                {
-                    console.log('play');
-                    beep.play();
+            var beep = new Audio('../../sounds/beep.flac');
+            // var beep = new Audio('/Morse/sounds/beep.flac');
+            beep.onended = function () { console.log('ended'); }
+            for (var i = 0; i < array.length; i++) {
+                console.log('play');
+                if (array[i] == '1') {
+                    console.log('...sound');
+                    await beep.play();
                 }
-                else
-                {
-                    console.log('dont');
+                else {
+                    console.log('...blank');
                 }
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
